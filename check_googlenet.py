@@ -1,29 +1,45 @@
+
 import os
 
-# Use legacy Keras for TensorFlow Hub compatibility
 os.environ["TF_USE_LEGACY_KERAS"] = "1"
 
 import tensorflow as tf
 import tensorflow_hub as hub
+
+from class_mapping import CLASS_NAMES
 
 MODEL_URL = (
     "https://tfhub.dev/google/imagenet/"
     "inception_v1/feature_vector/4"
 )
 
-print("TensorFlow version:", tf.__version__)
-print("Available GPUs:", tf.config.list_physical_devices("GPU"))
+print("TensorFlow:", tf.__version__)
+print("GPUs:", tf.config.list_physical_devices("GPU"))
 
-# Load pretrained GoogLeNet / Inception v1
-model = hub.load(MODEL_URL)
+# Load pretrained GoogLeNet feature extractor
+feature_extractor = hub.KerasLayer(
+    MODEL_URL,
+    trainable=False
+)
 
-print("Pretrained GoogLeNet loaded successfully!")
+# Build our four-class model
+model = tf.keras.Sequential([
+    tf.keras.layers.Input(shape=(224, 224, 3)),
+    feature_extractor,
+    tf.keras.layers.Dense(
+        len(CLASS_NAMES),
+        activation="softmax"
+    )
+])
 
-# Create one artificial RGB image
-test_image = tf.zeros((1, 224, 224, 3), dtype=tf.float32)
+# Test with one artificial MRI-shaped input
+test_image = tf.zeros((1, 224, 224, 3))
 
-# Extract image features
-features = model(test_image)
+predictions = model(test_image)
 
-print("Input shape:", test_image.shape)
-print("Feature shape:", features.shape)
+print("Output shape:", predictions.shape)
+print("Probabilities:", predictions.numpy())
+
+assert predictions.shape == (1, 4)
+
+print("GoogLeNet classifier test passed!")

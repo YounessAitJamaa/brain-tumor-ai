@@ -8,10 +8,12 @@ import tensorflow_hub as hub
 
 from class_mapping import CLASS_NAMES
 
+
 MODEL_URL = (
-    "https://tfhub.dev/google/imagenet/"
-    "inception_v1/feature_vector/4"
+    "https://www.kaggle.com/models/google/inception-v1/"
+    "TensorFlow2/feature-vector/2"
 )
+
 
 print("TensorFlow:", tf.__version__)
 print("GPUs:", tf.config.list_physical_devices("GPU"))

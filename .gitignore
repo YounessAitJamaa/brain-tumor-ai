@@ -2,3 +2,12 @@
 data/raw/
 __pycache__/
 .ipynb_checkpoints/
+
+# Trained model files
+*.weights.h5
+*.keras
+*.ckpt
+
+# Dataset archives and runtime logs
+data/*.tar.gz
+*.log

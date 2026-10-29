@@ -11,3 +11,7 @@ __pycache__/
 # Dataset archives and runtime logs
 data/*.tar.gz
 *.log
+
+# Generated YOLO dataset
+data/processed/yolo_binary/images/
+data/processed/yolo_binary/labels/

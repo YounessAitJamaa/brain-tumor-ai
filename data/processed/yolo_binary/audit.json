@@ -1,0 +1,1377 @@
+{
+  "policy": "Binary tumor localization; exclude questionable positive annotations",
+  "input_images": 3913,
+  "splits": {
+    "train": {
+      "source_images": 2739,
+      "exported_images": 2581,
+      "positive_images": 2160,
+      "tumor_boxes": 2342,
+      "background_images": 421,
+      "excluded_positive": 158,
+      "source_class_mismatch": 157,
+      "empty_positive_label": 1
+    },
+    "val": {
+      "source_images": 587,
+      "exported_images": 559,
+      "positive_images": 469,
+      "tumor_boxes": 509,
+      "background_images": 90,
+      "excluded_positive": 28,
+      "source_class_mismatch": 28
+    },
+    "test": {
+      "source_images": 587,
+      "exported_images": 550,
+      "positive_images": 460,
+      "tumor_boxes": 500,
+      "background_images": 90,
+      "excluded_positive": 37,
+      "source_class_mismatch": 37
+    }
+  },
+  "negative_images_with_original_boxes_ignored": 599,
+  "negative_images_missing_original_labels": 2,
+  "excluded_images": [
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0471.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0471.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0486.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0486.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (454).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (454).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (811).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (811).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (431).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (431).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (800).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (800).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (806).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (806).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1214.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1214.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Meningioma/images/m (15).jpg",
+      "label": "data/raw/archive/Val/Meningioma/labels/m (15).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0060.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0060.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1201.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1201.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/gg (558).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (558).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0468.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0468.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/Tr-gl_1171.jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/Tr-gl_1171.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0808.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0808.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1041.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1041.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0129.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0129.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0931.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0931.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (326).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (326).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0964.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0964.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (720).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (720).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0499.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0499.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0767.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0767.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0043.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0043.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0782.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0782.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0067.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0067.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (389).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (389).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/gg (81).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (81).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0887.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0887.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0951.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0951.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (675).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (675).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (401).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (401).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m2 (125).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m2 (125).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1247.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1247.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (165).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (165).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (275).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (275).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1167.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1167.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0517.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0517.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (304).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (304).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (28).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (28).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0065.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0065.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (306).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (306).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (471).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (471).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (379).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (379).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0844.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0844.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0023.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0023.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (139).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (139).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1232.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1232.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (686).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (686).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1134.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1134.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (161).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (161).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (292).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (292).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1042.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1042.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/gg (342).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (342).txt",
+      "reason": "empty_positive_label"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (399).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (399).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (298).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (298).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0965.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0965.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (291).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (291).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0473.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0473.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m (26).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (26).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m2 (117).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m2 (117).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0417.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0417.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Pituitary/images/p (564).jpg",
+      "label": "data/raw/archive/Train/Pituitary/labels/p (564).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (559).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (559).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (56).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (56).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (380).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (380).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m3 (169).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m3 (169).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/gg (409).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (409).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (676).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (676).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (297).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (297).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (446).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (446).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m2 (25).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m2 (25).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0061.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0061.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0575.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0575.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0502.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0502.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (782).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (782).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m (50).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (50).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (159).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (159).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1187.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1187.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (374).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (374).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (755).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (755).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1014.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1014.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0848.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0848.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0487.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0487.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m3 (55).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m3 (55).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1182.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1182.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0790.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0790.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/gg (317).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (317).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/Tr-gl_0343.jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/Tr-gl_0343.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0485.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0485.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m (55).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (55).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1186.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1186.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (410).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (410).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (807).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (807).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m (81).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (81).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0551.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0551.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (776).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (776).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (809).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (809).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0461.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0461.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (421).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (421).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Meningioma/images/Tr-me_1116.jpg",
+      "label": "data/raw/archive/Val/Meningioma/labels/Tr-me_1116.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0501.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0501.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/gg (27).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (27).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0048.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0048.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0138.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0138.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (289).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (289).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0949.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0949.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0142.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0142.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (171).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (171).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0619.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0619.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (366).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (366).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0119.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0119.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (455).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (455).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0036.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0036.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (373).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (373).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0961.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0961.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1195.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1195.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (679).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (679).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0666.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0666.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (630).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (630).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (290).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (290).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (733).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (733).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (129).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (129).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0884.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0884.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (812).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (812).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0807.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0807.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0914.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0914.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (118).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (118).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (453).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (453).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0121.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0121.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Val/Glioma/images/gg (324).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (324).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1170.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1170.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0566.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0566.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (685).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (685).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (713).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (713).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0430.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0430.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0561.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0561.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0562.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0562.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0643.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0643.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m (52).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (52).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (143).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (143).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0574.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0574.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0042.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0042.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0747.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0747.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1131.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1131.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (365).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (365).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (170).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (170).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0932.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0932.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0436.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0436.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (456).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (456).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0788.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0788.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0484.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0484.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (164).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (164).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/m (53).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (53).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0500.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0500.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/gg (327).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (327).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1061.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1061.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "train",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0930.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0930.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (734).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (734).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0770.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0770.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0516.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0516.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (252).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (252).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (58).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (58).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/m2 (118).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m2 (118).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0900.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0900.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (169).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (169).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/m1(113).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m1(113).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1193.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1193.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (775).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (775).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1062.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1062.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (166).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (166).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0665.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0665.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0642.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0642.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (276).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (276).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0529.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0529.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (711).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (711).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0554.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0554.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Val/Glioma/images/gg (140).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (140).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (318).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (318).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Val/Meningioma/images/m (45).jpg",
+      "label": "data/raw/archive/Val/Meningioma/labels/m (45).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (167).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (167).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (160).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (160).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0564.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0564.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Meningioma/images/m (51).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (51).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/gg (691).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (691).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "val",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0041.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0041.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (781).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (781).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Val/Glioma/images/gg (277).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (277).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/m3 (50).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m3 (50).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Val/Meningioma/images/Tr-me_1096.jpg",
+      "label": "data/raw/archive/Val/Meningioma/labels/Tr-me_1096.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0741.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0741.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0683.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0683.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0768.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0768.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0385.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0385.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/Te-gl_0122.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Te-gl_0122.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (408).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (408).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Val/Glioma/images/gg (305).jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/gg (305).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (810).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (810).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Val/Glioma/images/Tr-gl_0474.jpg",
+      "label": "data/raw/archive/Val/Glioma/labels/Tr-gl_0474.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0783.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0783.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0483.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0483.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1210.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1210.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (253).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (253).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0115.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0115.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (445).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (445).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0565.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0565.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (710).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (710).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (278).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (278).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0265.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0265.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0515.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0515.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (402).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (402).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_0470.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_0470.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0908.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0908.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/m (54).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m (54).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0777.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0777.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_1038.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_1038.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0956.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0956.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/Tr-me_0685.jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/Tr-me_0685.txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (36).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (36).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/m1(10).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m1(10).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Meningioma/images/m3 (162).jpg",
+      "label": "data/raw/archive/Train/Meningioma/labels/m3 (162).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/gg (678).jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/gg (678).txt",
+      "reason": "source_class_mismatch"
+    },
+    {
+      "split": "test",
+      "image": "data/raw/archive/Train/Glioma/images/Tr-gl_1202.jpg",
+      "label": "data/raw/archive/Train/Glioma/labels/Tr-gl_1202.txt",
+      "reason": "source_class_mismatch"
+    }
+  ],
+  "note": "Source bounding boxes not clinically verified; patient independence unknown"
+}

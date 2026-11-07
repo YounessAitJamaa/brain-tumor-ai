@@ -1,0 +1,37 @@
+{
+  "model": "YOLOv8n",
+  "task": "binary_brain_tumor_detection",
+  "framework": "Ultralytics",
+  "ultralytics_version": "8.4.192",
+  "hardware": "NVIDIA RTX 3090 24GB",
+  "training": {
+    "epochs": 20,
+    "image_size": 640,
+    "batch_size": 16,
+    "seed": 42,
+    "pretrained": true
+  },
+  "dataset": {
+    "train_images": 2581,
+    "validation_images": 559,
+    "test_images": 550,
+    "class_names": ["Tumor"]
+  },
+  "validation_metrics": {
+    "precision": 0.907,
+    "recall": 0.898,
+    "map50": 0.955,
+    "map50_95": 0.735
+  },
+  "test_metrics": {
+    "precision": 0.932,
+    "recall": 0.888,
+    "map50": 0.959,
+    "map50_95": 0.744
+  },
+  "limitations": [
+    "Bounding-box annotations are not clinically verified",
+    "Patient-level independence across splits is not established",
+    "Research prototype only; not for clinical diagnosis"
+  ]
+}

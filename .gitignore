@@ -15,3 +15,6 @@ data/*.tar.gz
 # Generated YOLO dataset
 data/processed/yolo_binary/images/
 data/processed/yolo_binary/labels/
+
+# YOLO model weights and generated results
+/artifacts/yolo_detection/

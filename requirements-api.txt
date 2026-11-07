@@ -1,0 +1,6 @@
+-r requirements-vast.txt
+fastapi==0.162.2
+uvicorn==0.54.0
+python-multipart==0.0.32
+streamlit==1.65.0
+requests==2.34.2

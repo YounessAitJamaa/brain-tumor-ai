@@ -1,0 +1,68 @@
+{
+  "split": "test",
+  "samples": 587,
+  "accuracy": 0.8313458262350937,
+  "macro_f1": 0.8412275207996645,
+  "class_names": [
+    "Glioma",
+    "Meningioma",
+    "No Tumor",
+    "Pituitary"
+  ],
+  "confusion_matrix": [
+    [
+      146,
+      30,
+      2,
+      1
+    ],
+    [
+      22,
+      110,
+      6,
+      26
+    ],
+    [
+      2,
+      2,
+      86,
+      0
+    ],
+    [
+      1,
+      7,
+      0,
+      146
+    ]
+  ],
+  "per_class": [
+    {
+      "class": "Glioma",
+      "precision": 0.8538011695906432,
+      "recall": 0.8156424581005587,
+      "f1": 0.8342857142857143,
+      "support": 179
+    },
+    {
+      "class": "Meningioma",
+      "precision": 0.738255033557047,
+      "recall": 0.6707317073170732,
+      "f1": 0.7028753993610224,
+      "support": 164
+    },
+    {
+      "class": "No Tumor",
+      "precision": 0.9148936170212766,
+      "recall": 0.9555555555555556,
+      "f1": 0.9347826086956522,
+      "support": 90
+    },
+    {
+      "class": "Pituitary",
+      "precision": 0.8439306358381503,
+      "recall": 0.948051948051948,
+      "f1": 0.892966360856269,
+      "support": 154
+    }
+  ]
+}

@@ -18,3 +18,10 @@ data/processed/yolo_binary/labels/
 
 # YOLO model weights and generated results
 /artifacts/yolo_detection/
+.venv-mlflow/
+mlruns/
+mlflow.db*
+mlartifacts/
+
+.venv-airflow/
+.airflow/

@@ -1,0 +1,24 @@
+{
+  "dataset_split": "val",
+  "original_image": "data/raw/archive/Train/Meningioma/images/m3 (115).jpg",
+  "dataset_class": "Meningioma",
+  "classification": {
+    "model": "GoogLeNet",
+    "predicted_class": "Pituitary",
+    "confidence_approx": 0.792,
+    "matches_dataset_label": false
+  },
+  "detection": {
+    "model": "YOLOv8n",
+    "predicted_class": "Tumor",
+    "confidence": 0.7603,
+    "ground_truth_boxes": 1,
+    "predicted_boxes": 1,
+    "best_iou": 0.8211
+  },
+  "limitations": [
+    "Results describe a single validation image",
+    "Dataset annotations have not been clinically verified",
+    "IoU agreement does not establish diagnostic correctness"
+  ]
+}
